@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cell from './Cell.js'
 
 export default class Matrix extends Component {
   
@@ -17,5 +18,12 @@ export default class Matrix extends Component {
       </div>
     )
   }
-  
 }
+
+Matrix.defaultProps = {
+  values:(() => {
+    const defRow = ['#f00', '#f00', '#f00', '#f00', '#f00', '#f00', '#f00', '#f00', '#f00', '#f00']
+    return (new Array(10).fill(defRow))
+  })()
+}
+  
